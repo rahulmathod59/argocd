@@ -4,7 +4,7 @@ metadata:
   name: go-app-argo-config
   namespace: argocd
 spec:
-  project: mytest
+  project: ipappk8s
   source:
     repoURL: https://github.com/rahulmathod59/argocd.git
     targetRevision: main
