@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-app-argo-config
+  namespace: argocd
+spec:
+  project: mytest
+  source:
+    repoURL: https://github.com/rahulmathod59/argocd.git
+    targetRevision: main
+    path: kubeconfig
+  destination:
+    server: https://13.126.218.233:6443
+    namespace: ip-app
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
+
